@@ -5,11 +5,10 @@ using UnityEngine;
 public class Gravity : MonoBehaviour {
     private float gravity = -9.8f;
     private bool is_grounded = false;
-    
 
 	// Use this for initialization
 	void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
@@ -21,19 +20,19 @@ public class Gravity : MonoBehaviour {
     }
 
     // set value of gravity
-    void set_gravity(float speed)
+    public void set_gravity(float speed)
     {
         gravity = speed;
     }
 
     // return gravity speed
-    float get_gravity()
+    public float get_gravity()
     {
         return gravity;
     }
 
     // toggle is_grounded
-    void toggle_grounded()
+    public void toggle_grounded()
     {
         if (is_grounded)
             is_grounded = false;
