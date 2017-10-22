@@ -20,4 +20,24 @@ public class Gravity : MonoBehaviour {
         }
     }
 
+    // set value of gravity
+    void set_gravity(float speed)
+    {
+        gravity = speed;
+    }
+
+    // return gravity speed
+    float get_gravity()
+    {
+        return gravity;
+    }
+
+    // toggle is_grounded
+    void toggle_grounded()
+    {
+        if (is_grounded)
+            is_grounded = false;
+        else
+            is_grounded = true;
+    }
 }
