@@ -13,13 +13,8 @@ public class My_Debug_Logs : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        // if in debug mode, then print all debug messages
-		if (debug)
-        {
-            foreach(string s in debug_messages.Keys)
-                Debug.Log(debug_messages[s]);
-        }
-	}
+
+    }
 
     // add new message to debug message logs
     public void add_message(string key, string value)
@@ -38,5 +33,12 @@ public class My_Debug_Logs : MonoBehaviour {
         // shorthand if statement
         // if debug is true, set it to false, else set debug true
         debug = debug ? false : true;
+    }
+
+    // print messages
+    public void print_messages()
+    {
+        foreach (string s in debug_messages.Keys)
+            Debug.Log(s + ": " + debug_messages[s]);
     }
 }

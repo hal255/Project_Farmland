@@ -39,4 +39,9 @@ public class Gravity : MonoBehaviour {
         else
             is_grounded = true;
     }
+
+    public bool get_is_grounded()
+    {
+        return is_grounded;
+    }
 }
