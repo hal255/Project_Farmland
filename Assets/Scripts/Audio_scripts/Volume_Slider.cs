@@ -15,7 +15,7 @@ public class Volume_Slider : MonoBehaviour {
         volume_label = gameObject.GetComponentInChildren<Text>();
         volume = volume_slider.value * 100;
         volume_label.text = "Volume " + (int)volume + "%";
-        Debug.Log(volume_label.text);
+        AudioListener.volume = volume_slider.value;
 
         //Adds a listener to the main slider and invokes a method when the value changes.
         volume_slider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
@@ -27,7 +27,5 @@ public class Volume_Slider : MonoBehaviour {
         AudioListener.volume = volume_slider.value;
         volume = volume_slider.value * 100;
         volume_label.text = "Volume " + (int)volume + "%";
-        Debug.Log(volume_label.text);
-        Debug.Log(volume_slider.value);
     }
 }
