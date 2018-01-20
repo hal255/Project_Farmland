@@ -60,8 +60,8 @@ public class Player_Audio_Controller : MonoBehaviour {
 
     void RunTests()
     {
-        TestAddClips();
-        TestsPlayClip();
+        //TestAddClips();
+        //TestsPlayClip();
     }
 
     // test to determine same clips cannot be added to audio_clips
