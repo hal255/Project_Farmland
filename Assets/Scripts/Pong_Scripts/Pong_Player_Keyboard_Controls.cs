@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Keyboard_Controls : MonoBehaviour {
+public class Pong_Player_Keyboard_Controls : MonoBehaviour {
 
     [SerializeField]
     float move_speed = 1.0f;
