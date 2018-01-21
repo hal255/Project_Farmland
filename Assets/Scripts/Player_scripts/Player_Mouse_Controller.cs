@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player_Mouse_Controller : MonoBehaviour {
 
+    [SerializeField] 
+    float move_speed = 1.0f;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -20,4 +23,5 @@ public class Player_Mouse_Controller : MonoBehaviour {
         if (Input.GetMouseButtonDown(2))
             Debug.Log("Pressed middle click.");
     }
+
 }
