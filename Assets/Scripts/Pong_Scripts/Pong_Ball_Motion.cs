@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Pong_Ball_Motion : MonoBehaviour {
     [SerializeField]
-    float move_speed = 10.0f;
-    private float rotate_angle = 0.0f;
+    float move_speed = 10.0f;               // velocity of ball
+    private float rotate_angle = 0.0f;      // angle of ball, from top down view
+
+    float added_speed = 0.0f;               // added speed from user's paddle
 
 	// Use this for initialization
 	void Start () {
-        float new_angle = Random.value * 369;
-        transform.Rotate(Vector3.up * new_angle);
+        // generate a random angle and move towards that direction
+        float new_angle = Random.value * 359;
+        transform.Rotate(Vector3.up * new_angle);       // "up" is the y-axis, the top-down view
 
 	}
 	
