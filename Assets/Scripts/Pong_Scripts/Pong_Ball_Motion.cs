@@ -34,10 +34,25 @@ public class Pong_Ball_Motion : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (debug)
-            Debug.Log("Colision detected!!!!!!!! Pong ball current angle: " + rotate_angle);
-        rotate_angle = (rotate_angle > 180f) ? rotate_angle - 180f : rotate_angle + 180f;
-        SetBallRotation();
+        //if (debug)
+        //    Debug.Log("Pong ball collided with " + collision.collider.name + "!! current angle: " + rotate_angle);
+        Ray ray = new Ray(transform.position, transform.forward);
+        RaycastHit hit;
+        //if (Physics.Raycast(ray, out hit, move_speed * Time.deltaTime, 10))
+        //{
+        //    Vector3 reflectDir = Vector3.Reflect(ray.direction, hit.normal);
+        //    float rot = 90 - Mathf.Atan2(reflectDir.z, reflectDir.x) * Mathf.Rad2Deg;
+        //    transform.eulerAngles = new Vector3(0, rot, 0);
+        //}
+        if (Physics.Raycast(ray, out hit, 0.5f))
+        {
+            Debug.Log("Pong ball colliding with: " + hit.collider.name + ", hit distance: " + hit.distance + ", current angle: " + rotate_angle);
+            Vector3 reflectDir = Vector3.Reflect(ray.direction, hit.normal);
+            float rot = 90 - Mathf.Atan2(reflectDir.z, reflectDir.x) * Mathf.Rad2Deg;
+            transform.eulerAngles = new Vector3(0, rot, 0);
+            //rotate_angle += rot;
+            //SetBallRotation();
+        }
     }
 
     void SetBallRotation()
